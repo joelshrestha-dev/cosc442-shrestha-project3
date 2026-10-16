@@ -60,7 +60,7 @@ public class VendingMachine {
 	 */
 	public VendingMachine() {
 		itemArray = new VendingMachineItem[NUM_SLOTS];
-		for (int i = 0; i < NUM_SLOTS; i++) {
+		for (int i = 0; i <= NUM_SLOTS; i++) { // INJECTED FAULT FOR COVERAGE EXPERIMENT.
 			itemArray[i] = null;
 		}
 		this.balance = INITIAL_BALANCE;
