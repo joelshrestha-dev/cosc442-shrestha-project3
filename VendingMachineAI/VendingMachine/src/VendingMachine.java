@@ -60,7 +60,7 @@ public class VendingMachine {
 	 */
 	public VendingMachine() {
 		itemArray = new VendingMachineItem[NUM_SLOTS];
-		for (int i = 0; i <= NUM_SLOTS; i++) {
+		for (int i = 0; i < NUM_SLOTS; i++) {
 			itemArray[i] = null;
 		}
 		this.balance = INITIAL_BALANCE;
@@ -158,7 +158,7 @@ public class VendingMachine {
 	 *                                 amount is < 0
 	 */
 	public void insertMoney(double amount) throws VendingMachineException {
-		if (amount < 1)
+		if (amount < 0)
 			throw new VendingMachineException(VendingMachine.INVALID_AMOUNT_MESSAGE);
 		this.balance += amount;
 	}
