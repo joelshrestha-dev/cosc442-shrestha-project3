@@ -60,7 +60,7 @@ public class VendingMachine {
 	 */
 	public VendingMachine() {
 		itemArray = new VendingMachineItem[NUM_SLOTS];
-		for (int i = 0; i <= NUM_SLOTS; i++) { // INJECTED FAULT FOR COVERAGE EXPERIMENT.
+		for (int i = 0; i < NUM_SLOTS; i++) {
 			itemArray[i] = null;
 		}
 		this.balance = INITIAL_BALANCE;
@@ -161,7 +161,7 @@ public class VendingMachine {
 	 *                                 amount is < 0
 	 */
 	public void insertMoney(double amount) throws VendingMachineException {
-		if (amount < 0)
+		if (amount > 0) // INJECTED FAULT FOR COVERAGE EXPERIMENT.
 			throw new VendingMachineException(VendingMachine.INVALID_AMOUNT_MESSAGE);
 		this.balance += amount;
 	}
